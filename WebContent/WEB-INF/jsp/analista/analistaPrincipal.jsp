@@ -16,7 +16,7 @@
 	<p>Vista para analistas</p>
 	
 	<div id="botonera-analista">
-			<form action="perfilAnalista.html">
+			<form action="perfilUsuario.html">
 				<button id="perfil" type="submit">Perfil Personal </button>
 			</form>
 			

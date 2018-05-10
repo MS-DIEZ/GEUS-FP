@@ -108,6 +108,76 @@ public class SolicitudServiceImpl implements SolicitudService{
 		return listaTareasPendientes;
 	}
 
+	@Override
+	public void actualizarTareaWorkflowAprobada(int idTarea) {
+		// TODO Auto-generated method stub
+		
+		solicitudMapper.actualizarTareaWorkflowAprobada(idTarea);
+		
+	}
+
+	@Override
+	public void actualizarTareaWorkflowRechazada(int idTarea) {
+		// TODO Auto-generated method stub
+		solicitudMapper.actualizarTareaWorkflowRechazada(idTarea);
+		
+		
+	}
+
+	@Override
+	public void insertarAprobadorTarea(TrabajadoresDto trabajadoresDto) {
+		// TODO Auto-generated method stub
+		
+		solicitudMapper.insertarAprobadorTarea(trabajadoresDto);
+		
+	}
+
+	@Override
+	public List<TrabajadoresDto> getUsuarioTarea(int idTarea) {
+		// TODO Auto-generated method stub
+		
+		List<TrabajadoresDto> trabajadores = new ArrayList<TrabajadoresDto>();
+		trabajadores = solicitudMapper.getUsuarioTarea(idTarea);
+		
+		return trabajadores;
+	}
+
+	@Override
+	public UsuarioDto getUsuarioCorreo(int idUsuario) {
+		// TODO Auto-generated method stub
+		
+		UsuarioDto usuario = new UsuarioDto();
+		usuario = solicitudMapper.getUsuarioCorreo(idUsuario);
+		
+		return usuario;
+	}
+
+	@Override
+	public TareaDto getTareasDatosMail(int idTarea) {
+		// TODO Auto-generated method stub
+		
+		TareaDto tareaMail = new TareaDto();
+		tareaMail = solicitudMapper.getTareasDatosMail(idTarea);
+		return tareaMail;
+	}
+
+	@Override
+	public List<TareaDto> getTareasTramitadasDirectivo(int idDirectivo) {
+		// TODO Auto-generated method stub
+		
+		List<TareaDto> tareasTramitadas = new ArrayList<TareaDto>();
+		tareasTramitadas = solicitudMapper.getTareasTramitadasDirectivo(idDirectivo);
+		return tareasTramitadas;
+	}
+
+	@Override
+	public WorkflowDto getTareasTramitadasDirectivoEstado(int idTarea) {
+		// TODO Auto-generated method stub
+		WorkflowDto estadoWorkflow = new WorkflowDto();
+		estadoWorkflow = solicitudMapper.getTareasTramitadasDirectivoEstado(idTarea);
+		return estadoWorkflow;
+	}
+
 
 	
 }

@@ -7,7 +7,7 @@
 <title>GEUS-FP</title>
 </head>
 <body>
-	<p>Analista Perfil</p>
+	<p>Perfil de Usuario</p>
 	
 	<p>ID USUARIO: ${usuarioDto.getId()}</p>
 	<p>NOMBRE: ${usuarioDto.getNombre()}</p>

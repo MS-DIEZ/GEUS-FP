@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.gestionusuariosfp.model.*;
@@ -72,10 +73,47 @@ public interface SolicitudMapper {
 
 	@Select("SELECT GEUS002_TAREAS_ID AS idTarea, "
 			  + "GEUS002_TAREAS_NOMBRE AS nombreTarea, "
+			  + "GEUS002_TAREAS_EMISOR AS emisorTarea, "
 			  + "GEUS002_TAREAS_DESCRIPCION AS descripcionTarea "
 			  + "FROM GEUS002_TAREAS INNER JOIN GEUS004_WORKFLOW ON "
 			  + "GEUS004_WORKFLOW.GEUS004_WORKFLOW_ID_TAREA = GEUS002_TAREAS.GEUS002_TAREAS_ID "
 			  + "WHERE GEUS004_WORKFLOW_ID_ESTADO = 1")
 	public List<TareaDto> getTareasPendientes();
-
+	
+	@Update("UPDATE GEUS004_WORKFLOW "
+		  + "SET GEUS004_WORKFLOW_ID_ESTADO = 2 "
+		  + "WHERE GEUS004_WORKFLOW_ID_TAREA = #{idTarea}")
+	public void actualizarTareaWorkflowAprobada(int idTarea);
+	
+	@Update("UPDATE GEUS004_WORKFLOW "
+			  + "SET GEUS004_WORKFLOW_ID_ESTADO = 3 "
+			  + "WHERE GEUS004_WORKFLOW_ID_TAREA = #{idTarea}")
+	public void actualizarTareaWorkflowRechazada(int idTarea);
+	
+	@Insert("INSERT INTO GEUS005_TAREAS_DIRECTIVO(GEUS005_TAREAS_DIRECTIVO_ID_TAREA, GEUS005_TAREAS_DIRECTIVO_ID_DIRECTIVO) "
+			  + "VALUES (#{idTarea}, #{idTrabajador})")
+	@Options(useGeneratedKeys=true, keyProperty="id", flushCache=true, keyColumn="id")
+	public void insertarAprobadorTarea(TrabajadoresDto trabajadoresDto);
+	
+	@Select("SELECT GEUS003_TRABAJADORES_ID_EMPLEADO AS idTrabajador "
+			  + "FROM GEUS003_TRABAJADORES_ASIGNADOS WHERE GEUS003_TRABAJADORES_ID_TAREA = #{idTarea}")
+	public List<TrabajadoresDto> getUsuarioTarea(int idTarea);
+	
+	@Select("SELECT GEUS001_USUARIOS_EMAIL AS email "
+			  + "FROM GEUS001_USUARIOS WHERE GEUS001_USUARIOS_ID = #{idUsuario}")
+	public UsuarioDto getUsuarioCorreo(int idUsuario);
+	
+	@Select("SELECT GEUS002_TAREAS_NOMBRE AS nombreTarea, "
+		  + "GEUS002_TAREAS_EMISOR AS emisorTarea, "
+		  + "GEUS002_TAREAS_DESCRIPCION AS descripcionTarea "
+		  + "FROM GEUS002_TAREAS WHERE GEUS002_TAREAS_ID=#{idTarea}")
+	public TareaDto getTareasDatosMail(int idTarea);
+	
+	@Select("SELECT GEUS005_TAREAS_DIRECTIVO_ID_TAREA AS idTarea "
+			  + "FROM GEUS005_TAREAS_DIRECTIVO WHERE GEUS005_TAREAS_DIRECTIVO_ID_DIRECTIVO=#{idDirectivo}")
+	public List<TareaDto> getTareasTramitadasDirectivo(int idDirectivo);
+	
+	@Select("SELECT GEUS004_WORKFLOW_ID_ESTADO AS idEstado "
+			  + "FROM GEUS004_WORKFLOW WHERE GEUS004_WORKFLOW_ID_TAREA=#{idTarea}")
+	public WorkflowDto getTareasTramitadasDirectivoEstado(int idTarea);
 }

@@ -20,7 +20,15 @@ public interface SolicitudService {
 	UsuarioDto getUsuariosPerfil(int idUsuario);
 	List<TareaDto> getTareasPendientes();
 	int getUltimaTarea();
+	void actualizarTareaWorkflowAprobada(int idTarea);
+	void actualizarTareaWorkflowRechazada(int idTarea);
+	void insertarAprobadorTarea(TrabajadoresDto trabajadoresDto);
 	
+	List<TrabajadoresDto> getUsuarioTarea(int idTarea);
+	UsuarioDto getUsuarioCorreo(int idUsuario);
+	TareaDto getTareasDatosMail(int idTarea);
 	
+	List<TareaDto> getTareasTramitadasDirectivo(int idDirectivo);
+	WorkflowDto getTareasTramitadasDirectivoEstado(int idTarea);
 	
 }

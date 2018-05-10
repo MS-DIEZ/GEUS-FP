@@ -12,16 +12,16 @@
 	<p>Ventana para directivo</p>
 	
 	<div class="botonera-directivo">
-			<form action="perfilAnalista.html">
+			<form action="perfilUsuario.html">
 				<button id="perfil" type="submit">Perfil Personal </button>
 			</form>
 			
-			<form action="crearTareaAnalista.html">
-				<button id="crear-tarea" type="submit">Creacion de tarea</button>
+			<form action="listadoTareasAprobar.html">
+				<button id="crear-tarea" type="submit">Aprobación de tareas</button>
 			</form>
 			
-			<form action="listadoTareasAprobar.html">
-				<button id="listar-tareas" type="submit">Listado de tareas</button>
+			<form action="listadoTareasTramitadas.html">
+				<button id="listar-tareas" type="submit">Listado de tareas tramitadas</button>
 			</form>
 	</div>
 </body>
