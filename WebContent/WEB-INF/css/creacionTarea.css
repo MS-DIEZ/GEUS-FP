@@ -1,0 +1,94 @@
+*{
+	font-family: Arial, Helvetica, sans-serif;
+	margin:0px;
+}
+header{
+	background-color:CornflowerBlue;
+	width:100%;
+	height:8%;
+}
+
+#info{
+	font-size: 40px;
+	font-weight:bold;
+	margin-left:35%;
+}
+
+body{
+	height:100%;
+	widht:100%;
+}
+#titulo{
+	color:white;
+	font-size:50px;
+	font-weight:bold;
+	margin-left: 5%;
+}
+
+footer{
+	height: 10%;
+	width: 100%;
+	bottom:0px;
+	color: white;
+	background-color: CornflowerBlue;
+	position:absolute;
+	
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 90%;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+
+button{
+	height:5%;
+	width:90%;
+	margin-top: 2%;
+}
+
+#descripcionArea{
+	height:10%;
+	width:80%;
+}
+
+#descripcion{
+	top: 0px;
+}
+
+.datos{
+	font-weight:bold;
+	font-size: 30px;
+}
+
+#creacionTarea{
+	width: 60%;
+	height:80%;
+	float:left;
+}
+
+#capaIzquierda{
+	width: 15%;
+	height:80%;
+	float:right;
+	background-image: url("//localhost/Prueba/Imagenes/blue-1142743_1280.jpg");
+}
+
+
+#capaDerecha{
+	width: 15%;
+	height:80%;
+	float:left;
+	background-image: url("//localhost/Prueba/Imagenes/blue-1142743_1280.jpg");
+}
+
+
+#contenido{
+	margin-left:30%;
+	margin-top: 10%;
+	widht: 100%;
+}

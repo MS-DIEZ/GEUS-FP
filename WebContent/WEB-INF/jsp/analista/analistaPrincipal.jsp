@@ -12,12 +12,14 @@
 		<div id="logo"></div>
 		<div id="titulo">GEUS-FP</div>
 	</header>
-	<h3>${message}</h3> 
-	<p>Vista para analistas</p>
+	<div id="mensaje">
+		<h3>${message}</h3> 
+		<p>Vista para analistas</p>
+	</div>
 	
 	<div id="botonera-analista">
 			<form action="perfilUsuario.html">
-				<button id="perfil" type="submit">Perfil Personal </button>
+				<button id="perfil" type="submit">Perfil Personal</button>
 			</form>
 			
 			<form action="crearTareaAnalista.html">
@@ -28,5 +30,10 @@
 				<button id="listar-tareas" type="submit">Listado de tareas</button>
 			</form>
 	</div>
+	<footer>
+		<div id="infoFooter">
+			<p>Todos los derechos reservados, Daniel Díez Arias</p>
+		</div>
+	</footer>
 </body>
 </html>

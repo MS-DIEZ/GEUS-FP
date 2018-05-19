@@ -1,5 +1,8 @@
 package com.gestionusuariosfp.funciones;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
+
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -86,5 +89,10 @@ public class FuncionesController {
 			return true;
 		}	
 	}
+	
+	public String desencriptar(String s) throws UnsupportedEncodingException{
+        byte[] decode = Base64.getDecoder().decode(s.getBytes());
+        return new String(decode, "utf-8");
+    }
 	
 }

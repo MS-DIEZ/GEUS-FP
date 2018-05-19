@@ -1,12 +1,26 @@
+
 *{
 	font-family: Arial, Helvetica, sans-serif;
-	
+	margin: 0px;
 }
 
 header{
 	background-color:CornflowerBlue;
 	width:100%;
 	height:8%;
+}
+
+#mensaje{
+	width:100%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	margin-left: 5%;
+	font-size: 20px;
+}
+body{
+	height:100%;
+	width:100%;
+	position:relative;
 }
 
 #titulo{
@@ -16,35 +30,61 @@ header{
 	margin-left: 5%;
 }
 #botonera-analista{
-	height:60%;
+	height:455px;
 	width:100%;
 	border-bottom-style: solid;
 	border-bottom-style: solid;
 	border-right-style: solid;
 	border-top-style: solid;
 	border-color:black;	
+	float:right;
+	position:relative;
 }
 #crear-tarea{
-	font-size: 50px;
-	height:20%;
-	widht:20%;
+	font-size: 70px;
+	height:455px;
+	width: 25%;
 	float:left;
-	margin-right:10%;
+
+	margin-left:13%;
+	font-weight:bold;
+	color:CornflowerBlue;;
+	background-image: url("//localhost/Prueba/Imagenes/add.png");
 }
 
 #listar-tareas{
-	font-size: 50px;
-	height:20%;
-	widht:20%;
-	float:left;
-	margin-right:10%;
+	font-size: 70px;
+	height:455px;
+	width:25%;
+	float:right;
+	background-image: url("//localhost/Prueba/Imagenes/taskList.png");
+	font-weight:bold;
+	color:CornflowerBlue;;
 }
 
 #perfil{
-	font-size: 50px;
-	height:20%;
-	widht:20%;
+	font-size: 70px;
+	height:455px;
+	width:25%;
 	float:left;
-	margin-left:10%;
-	margin-right:10%;
+	font-weight:bold;
+	color:CornflowerBlue;;
+	background-image: url("//localhost/Prueba/Imagenes/newProfile.png")
+}
+
+footer{
+	height: 10%;
+	width: 100%;
+
+	bottom:0px;
+	color: white;
+	background-color: CornflowerBlue;
+	position:absolute;
+	
+}
+
+#infoFooter{
+	font-size: 20px;
+	margin-top: 1%;
+	margin-left: 5px;
 }

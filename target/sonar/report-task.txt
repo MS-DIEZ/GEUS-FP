@@ -1,0 +1,6 @@
+projectKey=GestionUsuariosFP:GestionUsuariosFP
+serverUrl=http://localhost:9000
+serverVersion=6.7.3.38370
+dashboardUrl=http://localhost:9000/dashboard/index/GestionUsuariosFP:GestionUsuariosFP
+ceTaskId=AWNUXnrvnOc74RRdT0xG
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWNUXnrvnOc74RRdT0xG

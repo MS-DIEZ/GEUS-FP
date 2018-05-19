@@ -1,6 +1,6 @@
 *{
 	font-family: Arial, Helvetica, sans-serif;
-	
+	margin:0px;
 }
 
 body{
@@ -17,6 +17,7 @@ body{
 	border-right-style: solid;
 	border-top-style: solid;
 	border-color:black;	
+	background-image: url("//localhost/Prueba/Imagenes/blue-1142743_1280.jpg");
 	
 }
 
@@ -112,6 +113,12 @@ button{
 footer{
 
 	width:100%;
+	bottom:0px;
+	height:19.3%;
+	position:absolute;
+	background-color:black;
+	color:white;
+	
 }
 
 

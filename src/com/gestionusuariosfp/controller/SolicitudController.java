@@ -1,5 +1,6 @@
 package com.gestionusuariosfp.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.Response;
 
+import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -24,6 +26,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.gestionusuariosfp.constantes.InformacionConstantes;
 import com.gestionusuariosfp.funciones.EmailSender;
 import com.gestionusuariosfp.funciones.FuncionesController;
+import com.gestionusuariosfp.funciones.QuartzJob;
 import com.gestionusuariosfp.model.ResponseDto;
 import com.gestionusuariosfp.model.TareaDto;
 import com.gestionusuariosfp.model.TrabajadoresDto;
@@ -42,6 +45,9 @@ public class SolicitudController extends HttpServlet{
 	private ResponseDto responseDto = new ResponseDto();
 	private FuncionesController funcionesController = new FuncionesController();
 	private InformacionConstantes informacionConstantes = new InformacionConstantes();
+	private QuartzJob quartzJob = new QuartzJob();
+	
+	private String password;
 	
 	@RequestMapping(value="/login")
 	public ModelAndView String(Model model){
@@ -55,11 +61,26 @@ public class SolicitudController extends HttpServlet{
 		List<UsuarioDto> listaUsuariosDto = new ArrayList<UsuarioDto>();
 		listaUsuariosDto = solicitudService.listarUsuarioLogin();
 		
+		//TODO Proceso quartz llamado en el arranque, reubicar
+		try {
+			quartzJob.executeQuartz();
+		} catch (SchedulerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+				
 		for(int i=0; i<listaUsuariosDto.size(); i++){
 			
+			try {
+				password = funcionesController.desencriptar(listaUsuariosDto.get(i).getPassword());
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			if((listaUsuariosDto.get(i).getEmail()).equals(usuario.getEmail()) &&
-			   (listaUsuariosDto.get(i).getPassword()).equals(usuario.getPassword()))
+			   (password.equals(usuario.getPassword())))
 			{
+
 				sesionActiva.setIdUsuario(listaUsuariosDto.get(i).getId());
 				
 				if(listaUsuariosDto.get(i).getPuesto() == informacionConstantes.ID_CARGO_TECNICO){
