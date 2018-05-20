@@ -8,23 +8,19 @@ header{
 	height:8%;
 }
 
+table{
+	width: 100%;
+	height:35%;
+}
+
+#tituloTabla{
+	background-color:black;
+	color:white;
+	font-weight: bold;
+}
+
 a{
 	text-decoration:none;
-}
-
-#info{
-	font-size: 40px;
-	font-weight:bold;
-	margin-left:38%;
-}
-
-.colorElemento{
-	background-color: black;
-	color: white;
-}
-
-#textfieldTarea{
-	width:80%;
 }
 
 body{
@@ -53,37 +49,17 @@ table, th, td {
     border-collapse: collapse;
     
 }
-
-table{
-	width:90%;
-	height:70%;
-}
 th, td {
     padding: 5px;
     text-align: left;    
 }
 
-button{
-	height:5%;
-	width:90%;
-	margin-top: 2%;
+#separador{
+	background-color:black;
 }
 
-#descripcionArea{
-	height:10%;
-	width:80%;
-}
 
-#descripcion{
-	top: 0px;
-}
-
-.datos{
-	font-weight:bold;
-	font-size: 30px;
-}
-
-#creacionTarea{
+#listarTarea{
 	width: 60%;
 	height:80%;
 	float:left;
@@ -96,17 +72,10 @@ button{
 	background-image: url("//localhost/Prueba/Imagenes/blue-1142743_1280.jpg");
 }
 
-#contenido{
-	margin-right:8%;
-	margin-top: 10%;
-	width: 80%;
-}
-
-#perfilPersonal{
-	width: 52%;
-	height:80%;
-	margin-right:0%;
-	float:left;
+#info{
+	font-size: 40px;
+	font-weight:bold;
+	margin-left:36.5%;
 }
 
 #capaDerecha{
@@ -118,7 +87,7 @@ button{
 
 
 #contenido{
-	margin-left:30%;
+	margin-left:17.5%;
 	margin-top: 10%;
 	widht: 100%;
 }

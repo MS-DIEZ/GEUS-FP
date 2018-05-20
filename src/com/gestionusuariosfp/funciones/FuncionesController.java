@@ -3,12 +3,16 @@ package com.gestionusuariosfp.funciones;
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.gestionusuariosfp.model.TrabajadoresDto;
+import com.gestionusuariosfp.service.SolicitudService;
 
 public class FuncionesController {
+	
+	private static SolicitudService service;
 	
 	public String[] splitEstadoId(String cadena){
 		String spliter[];
@@ -46,8 +50,10 @@ public class FuncionesController {
 				break;
 			case 3:
 				estadoFinal="RECHAZADO";
+				break;
 			case 4:
-				estadoFinal="COMPLETADO";
+				estadoFinal="FINALIZADO";
+				break;
 		}
 		
 		return(estadoFinal);
@@ -94,5 +100,14 @@ public class FuncionesController {
         byte[] decode = Base64.getDecoder().decode(s.getBytes());
         return new String(decode, "utf-8");
     }
+	
+	public void setService(SolicitudService solicitudService){
+		service=solicitudService;
+	}
+	
+	public SolicitudService getService(){
+		return this.service;
+		
+	}
 	
 }

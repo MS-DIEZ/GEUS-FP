@@ -2,6 +2,7 @@ package com.gestionusuariosfp.mappers;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
@@ -56,7 +57,8 @@ public interface SolicitudMapper {
 	
 	@Select("SELECT  GEUS002_TAREAS_ID AS idTarea, "
 			  + "GEUS002_TAREAS_NOMBRE AS nombreTarea, "
-			  + "GEUS002_TAREAS_DESCRIPCION AS descripcionTarea "
+			  + "GEUS002_TAREAS_DESCRIPCION AS descripcionTarea, "
+			  + "GEUS002_FECHA_TAREA AS fecha "
 			  + "FROM GEUS002_TAREAS WHERE GEUS002_TAREAS_EMISOR=#{idUsuario}")
 	public List<TareaDto> getTareasEmitidas(int idUsuario);
 	
@@ -116,4 +118,39 @@ public interface SolicitudMapper {
 	@Select("SELECT GEUS004_WORKFLOW_ID_ESTADO AS idEstado "
 			  + "FROM GEUS004_WORKFLOW WHERE GEUS004_WORKFLOW_ID_TAREA=#{idTarea}")
 	public WorkflowDto getTareasTramitadasDirectivoEstado(int idTarea);
+	
+	
+	@Select("SELECT GEUS002_TAREAS_ID AS idTarea, "
+			  + "GEUS002_TAREAS_NOMBRE AS nombreTarea, "
+			  + "GEUS002_TAREAS_EMISOR AS emisorTarea, "
+			  + "GEUS002_TAREAS_DESCRIPCION AS descripcionTarea "
+			  + "FROM GEUS002_TAREAS INNER JOIN GEUS004_WORKFLOW ON "
+			  + "GEUS004_WORKFLOW.GEUS004_WORKFLOW_ID_TAREA = GEUS002_TAREAS.GEUS002_TAREAS_ID "
+			  + "INNER JOIN GEUS003_TRABAJADORES_ASIGNADOS ON "
+			  + "GEUS003_TRABAJADORES_ASIGNADOS.GEUS003_TRABAJADORES_ID_EMPLEADO = #{idUsuario} "
+			  + "WHERE GEUS004_WORKFLOW_ID_ESTADO = 2 GROUP BY GEUS002_TAREAS_ID")
+	public List<TareaDto> getTareasAprobadasTecnico(int idUsuario);
+	
+	@Select("SELECT  GEUS002_TAREAS_ID AS idTarea, "
+			  + "GEUS002_TAREAS_NOMBRE AS nombreTarea, "
+			  + "GEUS002_TAREAS_DESCRIPCION AS descripcionTarea, "
+			  + "GEUS002_FECHA_TAREA AS fecha "
+			  + "FROM GEUS002_TAREAS")
+	public List<TareaDto> obtenerTodasTareas();
+	
+	@Delete("DELETE FROM GEUS002_TAREAS "
+		  + "WHERE GEUS002_TAREAS_ID = #{idTarea}")
+	public void eliminarTarea(int idTarea);
+	
+	@Delete("DELETE FROM GEUS003_TRABAJADORES_ASIGNADOS "
+		  + "WHERE GEUS003_TRABAJADORES_ID_TAREA = #{idTarea}")
+	public void eliminarTareaTrabajador(int idTarea);
+	
+	@Delete("DELETE FROM GEUS004_WORKFLOW "
+		  + "WHERE GEUS004_WORKFLOW_ID_TAREA = #{idTarea}")
+	public void eliminarTareaWorkflow(int idTarea);
+	
+	@Delete("DELETE FROM GEUS005_TAREAS_DIRECTIVO "
+		  + "WHERE GEUS004_TAREAS_DIRECTIVO_ID_TAREA = #{idTarea}")
+	public void eliminarTareaDirectivo(int idTarea);
 }

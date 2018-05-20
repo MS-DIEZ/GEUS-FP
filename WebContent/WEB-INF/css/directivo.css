@@ -8,6 +8,12 @@ a{
 	text-decoration:none;
 }
 
+header{
+	background-color:CornflowerBlue;
+	width:100%;
+	height:8%;
+}
+
 #cerrarSesion{
 	float:right;
 	width: 10%;
@@ -15,13 +21,6 @@ a{
 	margin-right:5%;
 	margin-top:2%;
 	height:20px;
-}
-
-header{
-	background-color:CornflowerBlue;
-	width:100%;
-	height:8%;
-	
 }
 
 #mensaje{
@@ -44,7 +43,7 @@ body{
 	margin-left: 5%;
 	float:left;
 }
-#botonera-analista{
+#botonera-directivo{
 	height:455px;
 	width:100%;
 	border-bottom-style: solid;
@@ -64,7 +63,7 @@ body{
 	margin-left:13%;
 	font-weight:bold;
 	color:CornflowerBlue;;
-	background-image: url("//localhost/Prueba/Imagenes/add.png");
+	background-image: url("//localhost/Prueba/Imagenes/check.png");
 }
 
 #listar-tareas{

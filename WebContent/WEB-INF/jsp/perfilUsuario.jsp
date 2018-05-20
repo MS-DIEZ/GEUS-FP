@@ -8,70 +8,72 @@
 <title>GEUS-FP</title>
 </head>
 <body>
-	<header>
+<header>
 		<div id="logo"></div>
-		<div id="titulo">GEUS-FP</div>
+		<a href="http://localhost:8080/GestionUsuariosFP/principal.html">
+			<div id="titulo"> GEUS-FP </div>
+		</a>
 </header>
-	<div id="perfil">
+	<div id="info">
 		<p>Perfil de Usuario</p>
 	</div>
-
-	<section id="informacionUno">
-		<div id="idUsuario">
-			<p>ID USUARIO: </p>
+	
+	<div id="capaDerecha"></div>
+	
+	<div id="perfilPersonal">
+		<div id="contenido">
+			<table>
+			<tr class="colorElemento">
+				<th colspan="2">Identificador corporativo</th>
+			</tr>
+			<tr>
+				<th>ID USUARIO</th>
+				<th>${usuarioDto.getId()}</th>
+			</tr>
 			
-		</div>
-		<div id="info">
-			<p>INFORMACIÓN BASICA</p>
-		</div>
-		<div id="nombre">
-			<p>NOMBRE: </p>
-
-		</div>
-		<div id="apellido">
-			<p>APELLIDO: </p>
-
-		</div>
-		<div id="sueldo">
-			<p>SUELDO: </p>
-
-		</div>
-		<div id="email">
-			<p>EMAIL: </p>
-
-		</div>
-		<div id="fechaInc">
-			<p>FECHA INCORPORACION: </p>
+			<tr class="colorElemento">
+				<th colspan="2">INFORMACION BASICA</th>
+			</tr>
+			
+			<tr>
+				<th>NOMBRE</th>
+				<th>${usuarioDto.getNombre()}</th>
+			</tr>
+			
+			<tr>
+				<th>APELLIDO</th>
+				<th>${usuarioDto.getApellido()}</th>
+			</tr>
+			
+			<tr class="colorElemento">
+				<th colspan="2">INFORMACION CORPORTATIVA</th>
+			</tr>
+			
+			<tr>
+				<th>SUELDO</th>
+				<th>${usuarioDto.getSalario()}</th>
+			</tr>
+			<tr>
+				<th>EMAIL</th>
+				<th>${usuarioDto.getEmail()}</th>
+			</tr>
+			
+			<tr>
+				<th>FECHA INCORPORACION</th>
+				<th>${usuarioDto.getFechaIncorporacion()}</th>
+			</tr>
 	
+			</table>
 		</div>
-	</section>
-	<section id="informacionDos">
-		<div id="idUsuario">
-			<p>${usuarioDto.getId()}</p>
-		</div>
-		<div id="nombre">
-			<p>${usuarioDto.getNombre()}</p>
-		</div>
-		<div id="apellido">
+	</div>
 	
-			<p>${usuarioDto.getApellido()}</p>
-		</div>
-		<div id="sueldo">
-		
-			<p>${usuarioDto.getSalario()}</p>
-		</div>
-		<div id="email">
-		
-			<p>${usuarioDto.getEmail()}</p>
-		</div>
-		<div id="fechaInc">
-		
-			<p>${usuarioDto.getFechaIncorporacion()}</p>
-		</div>
-	</section>
+	<div id="capaIzquierda"></div>
 
 	
 	<footer>
+		<div id="infoFooter">
+			<p>Todos los derechos reservados, Daniel Díez Arias</p>
+		</div>
 	</footer>
 	
 	

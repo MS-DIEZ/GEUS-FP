@@ -16,7 +16,7 @@ public class QuartzJob {
 	public void executeQuartz() throws SchedulerException  {
 		
 		JobDetail job = JobBuilder.newJob(QuartzProcess.class).build();
-		CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule("0 0/5 * 1/1 * ? *");
+		CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule("0 0 4 1/1 * ? *");
 		Trigger trigger = TriggerBuilder.newTrigger().withSchedule(scheduleBuilder).build();
 		
 		Scheduler scheduler = new StdSchedulerFactory().getScheduler();

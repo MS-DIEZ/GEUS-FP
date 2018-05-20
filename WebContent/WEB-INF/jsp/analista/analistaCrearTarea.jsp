@@ -14,7 +14,9 @@
 
 <header>
 		<div id="logo"></div>
-		<div id="titulo">GEUS-FP</div>
+		<a href="http://localhost:8080/GestionUsuariosFP/principal.html">
+			<div id="titulo"> GEUS-FP </div>
+		</a>
 </header>
 <div id="info">
 	<p>Creacion de tarea</p>
@@ -27,8 +29,9 @@
 	  <div id="nombre" class="datos">
 	  	<p>Nombre de la tarea a realizar</p>
 	  </div>
-      <p> Nombre tarea: <input type="text" name="nombreTarea"></p>
-      </br>
+      <p> Nombre tarea:</br> 
+      	<input type="text" id="textfieldTarea"name="nombreTarea"></p>
+      	</br>
       <div id="descripcion" class="datos">
 	  	<p>Descripción de la tarea a realizar</p>
 	  	
@@ -65,7 +68,9 @@
 </div>
 <div id="capaIzquierda"></div>
 <footer>
-	<p>Todos los derechos reservados, Daniel Díez Arias</p>
+		<div id="infoFooter">
+			<p>Todos los derechos reservados, Daniel Díez Arias</p>
+		</div>
 </footer>
 
 </body>

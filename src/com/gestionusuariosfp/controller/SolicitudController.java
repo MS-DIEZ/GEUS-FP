@@ -63,6 +63,7 @@ public class SolicitudController extends HttpServlet{
 		
 		//TODO Proceso quartz llamado en el arranque, reubicar
 		try {
+			funcionesController.setService(solicitudService);
 			quartzJob.executeQuartz();
 		} catch (SchedulerException e) {
 			// TODO Auto-generated catch block
@@ -85,13 +86,13 @@ public class SolicitudController extends HttpServlet{
 				
 				if(listaUsuariosDto.get(i).getPuesto() == informacionConstantes.ID_CARGO_TECNICO){
 					sesionActiva.setCategoriaUsuario(1);
-					return new ModelAndView("tecnicoPrincipal","message","Bienvenido "+listaUsuariosDto.get(i).getNombre());
+					return new ModelAndView("/tecnico/tecnicoPrincipal","message","Bienvenido "+listaUsuariosDto.get(i).getNombre());
 				}else if(listaUsuariosDto.get(i).getPuesto() == informacionConstantes.ID_CARGO_ANALISTA){
 					sesionActiva.setCategoriaUsuario(2);
 					return new ModelAndView("/analista/analistaPrincipal","message","Bienvenido "+listaUsuariosDto.get(i).getNombre());
 				}else{
 					sesionActiva.setCategoriaUsuario(3);
-					return new ModelAndView("directivoPrincipal","message","Bienvenido "+listaUsuariosDto.get(i).getNombre());
+					return new ModelAndView("/directivo/directivoPrincipal","message","Bienvenido "+listaUsuariosDto.get(i).getNombre());
 				}
 			}
 		}
@@ -103,15 +104,15 @@ public class SolicitudController extends HttpServlet{
 	public ModelAndView principal(Model model){
 		
 		if(sesionActiva.getCategoriaUsuario()==1){
-			return new ModelAndView("tecnicoPrincipal");
+			return new ModelAndView("/tecnico/tecnicoPrincipal");
 		}
 		
 		if(sesionActiva.getCategoriaUsuario()==2){
-			return new ModelAndView("analistaPrincipal");
+			return new ModelAndView("/analista/analistaPrincipal");
 		}
 		
 		if(sesionActiva.getCategoriaUsuario()==3){
-			return new ModelAndView("directivoPrincipal");
+			return new ModelAndView("/directivo/directivoPrincipal");
 		}
 		
 		return new ModelAndView("denied");
@@ -216,7 +217,7 @@ public class SolicitudController extends HttpServlet{
 			List<TareaDto> listaTareasPendientes = new ArrayList<TareaDto>();
 			listaTareasPendientes = solicitudService.getTareasPendientes();
 	
-			return new ModelAndView("directivoAprobarTareas","listaTareasDto",listaTareasPendientes);
+			return new ModelAndView("/directivo/directivoAprobarTareas","listaTareasDto",listaTareasPendientes);
 		}else{
 			return new ModelAndView("denied");
 		}
@@ -274,13 +275,13 @@ public class SolicitudController extends HttpServlet{
 			}
 			
 			if(!listaRechazadas.isEmpty()){
-				for(int i=0; i<listaAprobadas.size(); i++){
+				for(int i=0; i<listaRechazadas.size(); i++){
 					solicitudService.actualizarTareaWorkflowRechazada(listaRechazadas.get(i));
 					solicitudService.insertarAprobadorTarea(funcionesController.setTareaDirectivo(listaRechazadas.get(i), sesionActiva.getIdUsuario()));
 				}
 			}
 		
-			return new ModelAndView("directivoPrincipal","message","FASE DE PRUEBAS");
+			return new ModelAndView("/directivo/directivoPrincipal","message","FASE DE PRUEBAS");
 		}else{
 			return new ModelAndView("denied");
 		}
@@ -310,11 +311,21 @@ public class SolicitudController extends HttpServlet{
 				
 			}
 	
-			return new ModelAndView("directivoTareasTramitadas","datosConcatenados",datosConcatenados);
+			return new ModelAndView("/directivo/directivoTareasTramitadas","datosConcatenados",datosConcatenados);
 		}else{
 			return new ModelAndView("denied");
 		}
 	}
 	
+	/*------------------------------------------------*/
+	
+	/*Bloque de codigo dedicado a las tareas asignadas a técnicos*/
+	@RequestMapping(value="/listadoTareasAsignadas")
+	public ModelAndView listadoTareasAsignadas(Model model){
+		
+		List<TareaDto> datosTareasAsignadas = new ArrayList<TareaDto>();
+		datosTareasAsignadas=solicitudService.getTareasAprobadasTecnico(sesionActiva.getIdUsuario());
+		return new ModelAndView("/tecnico/tecnicoTareasAsignadas", "datosTareasAsignadas",datosTareasAsignadas);
+	}
 	/*------------------------------------------------*/
 }

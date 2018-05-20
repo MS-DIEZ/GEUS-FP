@@ -56,10 +56,10 @@
         
         
         <footer>
-        	<p>Todos los derechos reservados</p>
-        	<p>Sobre nosotros</p>
-        	<p>Politica de privacidad</p>
-        	<p>Contacto</p>
+        	<div class="infoF" id="info-1"><p>Todos los derechos reservados</p></div>
+        	<div class="infoF" id="info-2"><p>Sobre nosotros</p></div>
+        	<div class="infoF" id="info-3"><p>Politica de privacidad</p></div>
+        	<div class="infoF" id="info-4"><p>Contacto</p></div>
         </footer>
     </body>
 </html>

@@ -31,4 +31,11 @@ public interface SolicitudService {
 	List<TareaDto> getTareasTramitadasDirectivo(int idDirectivo);
 	WorkflowDto getTareasTramitadasDirectivoEstado(int idTarea);
 	
+	List<TareaDto> getTareasAprobadasTecnico(int idUsuario);
+	List<TareaDto> obtenerTodasTareas();
+	
+	void eliminarTarea(int idTarea);
+	void eliminarTareaTrabajador(int idTarea);
+	void eliminarTareaWorkflow(int idTarea);
+	void eliminarTareaDirectivo(int idTarea);
 }

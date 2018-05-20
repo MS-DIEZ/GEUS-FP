@@ -178,6 +178,48 @@ public class SolicitudServiceImpl implements SolicitudService{
 		return estadoWorkflow;
 	}
 
+	@Override
+	public List<TareaDto> getTareasAprobadasTecnico(int idUsuario) {
+		// TODO Auto-generated method stub
+		
+		List<TareaDto> tareasTecnico = new ArrayList<TareaDto>();
+		tareasTecnico= solicitudMapper.getTareasAprobadasTecnico(idUsuario);
+		return tareasTecnico;
+	}
+
+	@Override
+	public List<TareaDto> obtenerTodasTareas() {
+		// TODO Auto-generated method stub
+		
+		List<TareaDto> tareas = new ArrayList<TareaDto>();
+		tareas= solicitudMapper.obtenerTodasTareas();
+		return tareas;
+	}
+
+	@Override
+	public void eliminarTarea(int idTarea) {
+		// TODO Auto-generated method stub
+		solicitudMapper.eliminarTarea(idTarea);
+	}
+
+	@Override
+	public void eliminarTareaTrabajador(int idTarea) {
+		// TODO Auto-generated method stub
+		solicitudMapper.eliminarTareaTrabajador(idTarea);
+	}
+
+	@Override
+	public void eliminarTareaWorkflow(int idTarea) {
+		// TODO Auto-generated method stub
+		solicitudMapper.eliminarTareaWorkflow(idTarea);
+	}
+
+	@Override
+	public void eliminarTareaDirectivo(int idTarea) {
+		// TODO Auto-generated method stub
+		solicitudMapper.eliminarTareaDirectivo(idTarea);
+	}
+
 
 	
 }

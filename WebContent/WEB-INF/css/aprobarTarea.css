@@ -2,25 +2,26 @@
 	font-family: Arial, Helvetica, sans-serif;
 	margin:0px;
 }
+
+a{
+	text-decoration:none;
+}
+
 header{
 	background-color:CornflowerBlue;
 	width:100%;
 	height:8%;
 }
 
-a{
-	text-decoration:none;
+table{
+	height:45%;
+	width: 87%;
 }
 
 #info{
 	font-size: 40px;
 	font-weight:bold;
-	margin-left:38%;
-}
-
-.colorElemento{
-	background-color: black;
-	color: white;
+	margin-left:37%;
 }
 
 #textfieldTarea{
@@ -51,12 +52,7 @@ footer{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    
-}
-
-table{
-	width:90%;
-	height:70%;
+   
 }
 th, td {
     padding: 5px;
@@ -65,25 +61,13 @@ th, td {
 
 button{
 	height:5%;
-	width:90%;
+	width:87.5%;
 	margin-top: 2%;
 }
 
-#descripcionArea{
-	height:10%;
-	width:80%;
-}
 
-#descripcion{
-	top: 0px;
-}
 
-.datos{
-	font-weight:bold;
-	font-size: 30px;
-}
-
-#creacionTarea{
+#aprobacionTarea{
 	width: 60%;
 	height:80%;
 	float:left;
@@ -96,18 +80,6 @@ button{
 	background-image: url("//localhost/Prueba/Imagenes/blue-1142743_1280.jpg");
 }
 
-#contenido{
-	margin-right:8%;
-	margin-top: 10%;
-	width: 80%;
-}
-
-#perfilPersonal{
-	width: 52%;
-	height:80%;
-	margin-right:0%;
-	float:left;
-}
 
 #capaDerecha{
 	width: 15%;
@@ -118,9 +90,9 @@ button{
 
 
 #contenido{
-	margin-left:30%;
+	margin-left:15%;
 	margin-top: 10%;
-	widht: 100%;
+	width: 100%;
 }
 
 #infoFooter{

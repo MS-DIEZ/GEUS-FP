@@ -1,6 +1,6 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <style><%@include file="/WEB-INF/css/directivo.css"%></style>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,21 +8,38 @@
 <title>GEUS-FP</title>
 </head>
 <body>
-	<h3>Bienvenidos - ${message}</h3> 
-	<p>Ventana para directivo</p>
+	<header>
+		<div id="logo"></div>
+		<a href="http://localhost:8080/GestionUsuariosFP/principal.html">
+			<div id="titulo"> GEUS-FP </div>
+		</a>
+		<a href="http://localhost:8080/GestionUsuariosFP">
+			<button id="cerrarSesion" type="submit">Cerrar sesion</button>
+		</a>
+	</header>
 	
-	<div class="botonera-directivo">
+	<div id="mensaje">
+		<h3>${message}</h3> 
+		<p>Ventana para directivo</p>
+	</div>
+	<div id="botonera-directivo">
 			<form action="perfilUsuario.html">
 				<button id="perfil" type="submit">Perfil Personal </button>
 			</form>
 			
 			<form action="listadoTareasAprobar.html">
-				<button id="crear-tarea" type="submit">Aprobación de tareas</button>
+				<button id="crear-tarea" type="submit">Aprobar tareas</button>
 			</form>
 			
 			<form action="listadoTareasTramitadas.html">
 				<button id="listar-tareas" type="submit">Listado de tareas tramitadas</button>
 			</form>
 	</div>
+	
+	<footer>
+		<div id="infoFooter">
+			<p>Todos los derechos reservados, Daniel Díez Arias</p>
+		</div>
+	</footer>
 </body>
 </html>

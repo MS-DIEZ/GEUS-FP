@@ -54,20 +54,12 @@ body{
 	border-color:black;	
 	float:right;
 	position:relative;
+	
 }
-#crear-tarea{
-	font-size: 70px;
-	height:455px;
-	width: 25%;
-	float:left;
 
-	margin-left:13%;
-	font-weight:bold;
-	color:CornflowerBlue;;
-	background-image: url("//localhost/Prueba/Imagenes/add.png");
-}
 
 #listar-tareas{
+	margin-right:15%;
 	font-size: 70px;
 	height:455px;
 	width:25%;
@@ -78,6 +70,7 @@ body{
 }
 
 #perfil{
+	margin-left:15%;
 	font-size: 70px;
 	height:455px;
 	width:25%;
