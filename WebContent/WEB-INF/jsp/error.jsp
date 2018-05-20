@@ -9,10 +9,7 @@
         <title>Iniciar sesion</title>
     </head>
     <body>
-<!--     	<header> -->
-<!--     		<div id="logo">Logo.jpg</div> -->
-<!--     		<div id="titulo">GEUS FORMACION PROFESIONAL</div> -->
-<!--     	</header> -->
+
 		<section id="informacion">
 			<div id="contenedorInformacion">
 				<div id="informacionUno">
