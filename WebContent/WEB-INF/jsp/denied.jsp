@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
+<title>Acceso denegado</title>
+<link rel="shortcut icon" href="//localhost/Prueba/Imagenes/title.png"></head>
 <body>
 	<header>
 		<div id="logo"></div>

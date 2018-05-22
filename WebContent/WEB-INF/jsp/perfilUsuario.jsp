@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>GEUS-FP</title>
+<title>Perfil de usuario</title>
+<link rel="shortcut icon" href="//localhost/Prueba/Imagenes/title.png">
 </head>
 <body>
 <header>

@@ -10,7 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listado de tareas</title>
-</head>
+<link rel="shortcut icon" href="//localhost/Prueba/Imagenes/title.png"></head>
 <body>
 <header>
 		<div id="logo"></div>

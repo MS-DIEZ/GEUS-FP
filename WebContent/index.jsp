@@ -8,6 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Iniciar sesion</title>
+        <link rel="shortcut icon" href="//localhost/Prueba/Imagenes/title.png">
     </head>
     <body>
 		<section id="informacion">

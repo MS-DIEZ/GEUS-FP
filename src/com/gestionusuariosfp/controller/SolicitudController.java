@@ -325,6 +325,7 @@ public class SolicitudController extends HttpServlet{
 		
 		List<TareaDto> datosTareasAsignadas = new ArrayList<TareaDto>();
 		datosTareasAsignadas=solicitudService.getTareasAprobadasTecnico(sesionActiva.getIdUsuario());
+
 		return new ModelAndView("/tecnico/tecnicoTareasAsignadas", "datosTareasAsignadas",datosTareasAsignadas);
 	}
 	/*------------------------------------------------*/
