@@ -23,8 +23,8 @@ public class EmailSender {
 
 	public void sendMail(String receptor, String emisorTarea, String nombre, String descripcion) {
 		
-		javaMailSender.setPassword("danieldiezarias.1995");
-		javaMailSender.setUsername("danieldiezarias@gmail.com");
+		javaMailSender.setPassword("geusfp.2018");
+		javaMailSender.setUsername("GEUSFP@gmail.com");
 		javaMailSender.setHost("smtp.gmail.com");
 		javaMailSender.setPort(587);
 		

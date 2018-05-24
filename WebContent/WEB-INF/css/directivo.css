@@ -63,7 +63,7 @@ body{
 	margin-left:13%;
 	font-weight:bold;
 	color:CornflowerBlue;;
-	background-image: url("//localhost/Prueba/Imagenes/check.png");
+	background-image: url("https://image.ibb.co/jjqwqo/check.png");
 }
 
 #listar-tareas{
@@ -71,7 +71,7 @@ body{
 	height:455px;
 	width:25%;
 	float:right;
-	background-image: url("//localhost/Prueba/Imagenes/taskList.png");
+	background-image: url("https://image.ibb.co/cCrQi8/taskList.png");
 	font-weight:bold;
 	color:CornflowerBlue;;
 }
@@ -83,7 +83,7 @@ body{
 	float:left;
 	font-weight:bold;
 	color:CornflowerBlue;;
-	background-image: url("//localhost/Prueba/Imagenes/newProfile.png")
+	background-image: url("https://image.ibb.co/m3UZbT/new_Profile.png")
 }
 
 footer{

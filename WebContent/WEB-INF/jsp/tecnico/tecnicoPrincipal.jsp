@@ -6,15 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>GEUS-FP Técnico</title>
-<link rel="shortcut icon" href="//localhost/Prueba/Imagenes/title.png"></head>
+<link rel="shortcut icon" href="https://image.ibb.co/nhNhgT/title.png"></head>
 <body>
 	<header>
 		<div id="logo"></div>
-		<a href="http://localhost:8080/GestionUsuariosFP/principal.html">
+		<a href="http://geus-fp.j.layershift.co.uk/principal.html">
 			<div id="titulo"> GEUS-FP </div>
 		</a>
 		
-		<a href="http://localhost:8080/GestionUsuariosFP">
+		<a href="http://geus-fp.j.layershift.co.uk">
 			<button id="cerrarSesion" type="submit">Cerrar sesion</button>
 		</a>
 	</header>
