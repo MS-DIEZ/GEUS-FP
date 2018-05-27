@@ -2,6 +2,8 @@ package com.gestionusuariosfp.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Select;
+
 import com.gestionusuariosfp.model.TareaDto;
 import com.gestionusuariosfp.model.TrabajadoresDto;
 import com.gestionusuariosfp.model.UsuarioDto;
@@ -38,4 +40,5 @@ public interface SolicitudService {
 	void eliminarTareaTrabajador(int idTarea);
 	void eliminarTareaWorkflow(int idTarea);
 	void eliminarTareaDirectivo(int idTarea);
+	
 }

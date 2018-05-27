@@ -219,6 +219,8 @@ public class SolicitudServiceImpl implements SolicitudService{
 		// TODO Auto-generated method stub
 		solicitudMapper.eliminarTareaDirectivo(idTarea);
 	}
+	
+
 
 
 	
